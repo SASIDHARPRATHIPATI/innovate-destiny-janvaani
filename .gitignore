@@ -1,0 +1,11 @@
+﻿__pycache__/
+*.pyc
+.env
+venv/
+node_modules/
+.next/
+*.key
+credentials.json
+.DS_Store
+.vscode/
+*.log
