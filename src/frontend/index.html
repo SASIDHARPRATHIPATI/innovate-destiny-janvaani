@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Janvaani — Voice of the People</title>
+  <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+  <header>
+    <h1>🇮🇳 Janvaani</h1>
+    <p>Voice of the People — Team Innovate Destiny</p>
+    <span class='badge'>Track 1: AI for Digital Public Infrastructure</span>
+  </header>
+
+  <main>
+    <section class='card'>
+      <h2>Submit Citizen Feedback</h2>
+      <p class='hint'>Type or paste feedback in any Indian language. Gemini will translate, categorize, and score urgency.</p>
+      <textarea id='feedback' placeholder='Example: Hamare gaon mein sadak toot gayi hai, school ki chhat bhi leak ho rahi hai...'></textarea>
+      <div class='row'>
+        <select id='language'>
+          <option value='auto'>Auto-detect</option>
+          <option value='hi'>Hindi</option>
+          <option value='ta'>Tamil</option>
+          <option value='te'>Telugu</option>
+          <option value='bn'>Bengali</option>
+          <option value='mr'>Marathi</option>
+          <option value='en'>English</option>
+        </select>
+        <button onclick='submitFeedback()'>Analyze with Gemini</button>
+      </div>
+    </section>
+
+    <section class='card'>
+      <h2>AI Analysis</h2>
+      <pre id='output'>Awaiting input...</pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with ❤️ for India | Innovate Destiny</p>
+  </footer>
+
+  <script>
+    async function submitFeedback() {
+      const text = document.getElementById('feedback').value.trim();
+      const language = document.getElementById('language').value;
+      const output = document.getElementById('output');
+
+      if (!text) {
+        output.textContent = 'Please enter some feedback first.';
+        return;
+      }
+
+      output.textContent = 'Analyzing with Gemini...';
+
+      try {
+        const res = await fetch('/api/submit', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({text, language})
+        });
+        const data = await res.json();
+        output.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        output.textContent = 'Error: ' + err.message;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+﻿* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #0a1929 0%, #1a3a5c 100%);
+  color: #fff;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+header p { color: #b0c4de; margin-top: 8px; }
+
+.badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 16px;
+  background: rgba(255, 153, 51, 0.2);
+  border: 1px solid #ff9933;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #ff9933;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card h2 { margin-bottom: 12px; color: #ff9933; }
+
+.hint { color: #8fa8c4; font-size: 0.9rem; margin-bottom: 16px; }
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #2a4a6a;
+  background: #0d1b2a;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 16px;
+}
+
+textarea:focus { outline: none; border-color: #ff9933; }
+
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+select {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #2a4a6a;
+  background: #0d1b2a;
+  color: #fff;
+  font-size: 1rem;
+}
+
+button {
+  background: linear-gradient(90deg, #ff9933, #138808);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+button:hover { opacity: 0.9; transform: translateY(-1px); }
+
+pre {
+  background: #0d1b2a;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+  color: #7ee787;
+  border: 1px solid #2a4a6a;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #8fa8c4;
+  font-size: 0.9rem;
+}

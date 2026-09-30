@@ -1,0 +1,7 @@
+﻿google-generativeai
+google-cloud-aiplatform
+google-cloud-bigquery
+google-cloud-speech
+google-cloud-translate
+flask
+python-dotenv
